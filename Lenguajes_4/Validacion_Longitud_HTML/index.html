@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Length Name</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "Styless.css">
+</head>
+<img>
+    <h1>Verifica Nombre y Correo</h1>
+    <script>
+        function stringLengthCheck(name, minlength, maxlength){
+            var mnlen = minlength;
+            var mxlen = maxlength;
+            if(name.value.length < mnlen || name.value.length > mxlen){
+                alert("El nombre debe tener entre " + mnlen + " y " + mxlen + " caracteres");
+                return false;
+            } else{
+                return true;
+            }
+        }
+    </script>
+    <form name = "form1" action = "#">
+        Name: <input type = 'text' name = 'name'/></br></br>
+        <input type = "submit" name ="Verificar" value = "Verificar" onclick = "stringLengthCheck(document.form1.name, 8, 10)"/>
+    </form>
+    <form action = "" method="get" class = "form-example">
+        <div class = "form-example">
+            <label for = "name">Enter your name: </label>
+            <input type = "text" name="name" id = "name" required>
+        </div>
+        <div class = "form-example">
+            <label for = "email">Enter your email: </label>
+            <input type = "email" name="email" id = "email" required>
+        </div>
+        <div class = "form-example">
+            <input type = "submit" value = "Suscribir!">
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang = "en">   
+    <head>
+        <meta charset = "UTF-8">
+        <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+        <title>JSON_HTML</title>
+        <link rel = "stylesheet" href = "Styless.css">
+    </head>
+    <body>
+
+        <table id="demo">
+            <tr>
+                <th>
+                    First Name
+                </th>
+                <th>
+                    Last Name
+                </th>
+            </tr>
+        </table>
+        <script>
+            var xmlhttp = new XMLHttpRequest();
+            var url = "datos.json";
+
+            xmlhttp.onreadystatechange = function() 
+            {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+                {
+                    var myArr = JSON.parse(xmlhttp.responseText);
+                    myFunction(myArr);
+                }
+            };
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
+
+            function myFunction(arr) 
+            {
+                var table = "<tr><th>First Name</th><th>Last Name</th></tr>";
+                var i;
+                for(i = 0; i < arr.length; i++) {
+                    table += "<tr><td>" + arr[i].firstName + "</td><td>" + arr[i].lastName + "</td></tr>";
+                 }
+                document.getElementById("demo").innerHTML = table;
+            }
+        </script>
+    </body>
+</html>

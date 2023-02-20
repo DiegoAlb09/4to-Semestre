@@ -1,0 +1,15 @@
+table{
+    border-collapse: separate;
+    width: 70%;
+    box-shadow: 5px 5px 10px 10px;
+}
+th, td{
+    text-align: left;
+    padding: 12px;
+}
+tr{
+    background-color: #009dff;
+    color: rgb(0, 0, 0);
+}
+
+
