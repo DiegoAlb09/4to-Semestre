@@ -3,13 +3,30 @@ section#principal{
     margin: 0 auto;
     text-align: center;
     width: 100%;
-}article#comandos{
+}
+body{
+    background-color: #c1ffdf;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+}
+h1{
+    font-size: 2em;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    color: #0000ff77;
+}
+article#comandos{
     border: 1px solid lightgray;	
     display: inline-block;
     min-height: 300px;
     vertical-align: top;
     width: 25%;
-}article#tablero{
+}
+article#tablero{
     border: 1px solid lightblue;
     display: inline-block;
     margin: 0 auto;
@@ -31,5 +48,21 @@ input[type = "text"]{
     font-size: 1em;
     margin-top: 0.2em;
     padding: 0.1em;
-    
+}
+label{
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+}
+.botonInicial{
+    color: #77d;
+    background-color: #77d;
+}
+.botonJugador1{
+    color: whitesmoke;
+    background-color: #d77;
+}
+.botonJugador2{
+    color: whitesmoke;
+    background-color: #7d7;
 }
