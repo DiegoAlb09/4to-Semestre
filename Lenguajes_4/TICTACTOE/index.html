@@ -6,7 +6,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TicTacToe</title>
     <link rel="stylesheet" href="Styless.css">
-    <script type = "text/javascript" src="TicTacToejs"></script>
+    <script type = "text/javascript">
+        var bandera = false;
+        var turno = 0;
+        var tab = [];
+        window.onload = function(){
+            var iniciar = document.getElementById("Iniciar");
+            Iniciar.addEventListener("click",comenzar);
+        }
+        function comenzar(){
+            bandera = true;
+            var jugador1 = document.getElementById("jugador1");
+            var jugador2 = document.getElementById("jugador2");
+            if(jugador1.value==""){
+                alert("Ingrese el nombre del jugador 1");
+                jugador1.focus();
+            } else{
+                if(jugador2.value==""){
+                    alert("Ingrese el nombre del jugador 2");
+                    jugador2.focus();
+                } else{
+                    tab[0] = document.getElementById("btn1");
+                    tab[1] = document.getElementById("btn2");
+                    tab[2] = document.getElementById("btn3");
+                    tab[3] = document.getElementById("btn4");
+                    tab[4] = document.getElementById("btn5");
+                    tab[5] = document.getElementById("btn6");
+                    tab[6] = document.getElementById("btn7");
+                    tab[7] = document.getElementById("btn8");
+                    tab[8] = document.getElementById("btn9");
+            
+                    for(let i=0;i<9;i++){
+                        tab[i].className = "botonInicial";
+                        tab[i].value = "I";
+                    }
+                    turno = 1
+                    document.getElementById("lblTurno").innerHTML = "Adelante Jugador " + jugador1.value;
+                }
+            }
+        }
+        function colocar(boton){
+            if(bandera == true){
+                if(turno == 1 && boton.value == "I"){
+                    turno = 2;
+                    document.getElementById("lblTurno").innerHTML = "Adelante Jugador " + jugador2.value;
+                    boton.value = "X";
+                    boton.className = "botonJugador1";
+                } else{
+                    if (turno == 2 && boton.value == "I"){
+                        turno = 1;
+                        document.getElementById("lblTurno").innerHTML = "Adelante Jugador " + jugador1.value;
+                        boton.value = "O";
+                        boton.className = "botonJugador2";
+                    }
+                }
+            }
+        }
+        function revisar(){
+            if ((tab[0].value == "X" && tab[1].value == "X" && tab[2].value == "X")
+            || (tab[3].value == "X" && tab[4].value == "X" && tab[5].value == "X")
+            || (tab[6].value == "X" && tab[7].value == "X" && tab[8].value == "X")
+            || (tab[0].value == "X" && tab[3].value == "X" && tab[6].value == "X")
+            || (tab[1].value == "X" && tab[4].value == "X" && tab[7].value == "X")
+            || (tab[2].value == "X" && tab[5].value == "X" && tab[8].value == "X")
+            || (tab[0].value == "X" && tab[4].value == "X" && tab[8].value == "X")
+            || (tab[2].value == "X" && tab[4].value == "X" && tab[6].value)){
+                alert("Felicidades Jugador 1, has ganado");
+                bandera = false;
+            }
+        }
+    </script>
 </head>
 <body>
     <h1>Tic Tac Toe</h1>
@@ -18,17 +87,17 @@
             <label id = "lblTurno"></label>
         </article>
         <article id = "tablero">
-            <input type = "button" id = "btn1">
-            <input type = "button" id = "btn2">
-            <input type = "button" id = "btn3">
+            <input type = "button" id = "btn1" onclick ="colocar(this)">
+            <input type = "button" id = "btn2" onclick ="colocar(this)">
+            <input type = "button" id = "btn3" onclick ="colocar(this)"></br>
 
-            <input type = "button" id = "btn4">
-            <input type = "button" id = "btn5">
-            <input type = "button" id = "btn6">
+            <input type = "button" id = "btn4" onclick ="colocar(this)">
+            <input type = "button" id = "btn5" onclick ="colocar(this)">
+            <input type = "button" id = "btn6" onclick ="colocar(this)"></br>
 
-            <input type = "button" id = "btn7">
-            <input type = "button" id = "btn8">
-            <input type = "button" id = "btn9">
+            <input type = "button" id = "btn7" onclick ="colocar(this)">
+            <input type = "button" id = "btn8" onclick ="colocar(this)">
+            <input type = "button" id = "btn9" onclick ="colocar(this)"></br>
         </article>
     </section>
 </body>
