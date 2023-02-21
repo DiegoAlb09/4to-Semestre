@@ -77,6 +77,9 @@ article#tablero input{
     width: 80px;
     margin: 10px;
 }
+input[type = "button"]{
+    border-radius: 10%;
+}
 input[type = "button"]#Iniciar{
     font-size: 0.8em;
     margin-top: 2em;
