@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload = "processUser()">
+    <script lenguage = "javascript">
+        function processUser(){
+            var parameters = location.search.substring(1).split("&")
+            var temp = parameters[0].split("=")
+            l = unescape(temp[1])
+            temp = parameters[1].split("=")
+            p = unescape(temp[1])
+            temp = parameters[2].split("=") 
+            g = unescape(temp[1])
+
+            // Comprobar si al menos dos de los numeros son pares
+            var l = parseInt(l)
+            var p = parseInt(p)
+            var g = parseInt(g)
+
+            if(l%2==0 && p%2==0){
+                document.getElementById("log").innerHTML = "El numero " + l + " es par"
+                document.getElementById("pass").innerHTML = "El numero " + p + " es par"
+            } else if(l%2==0 && g%2==0){
+                document.getElementById("log").innerHTML = "El numero " + l + " es par"
+                document.getElementById("gen").innerHTML = "El numero " + g + " es par"
+            } else if(p%2==0 && g%2==0){
+                document.getElementById("pass").innerHTML = "El numero " + p + " es par"
+                document.getElementById("gen").innerHTML = "El numero " + g + " es par"
+            } else{
+                document.getElementById("log").innerHTML = "El numero " + l + " no es par"
+                document.getElementById("pass").innerHTML = "El numero " + p + " no es par"
+                document.getElementById("gen").innerHTML = "El numero " + g + " no es par"
+            }
+
+            // Comprobar cual de los tres es el mayor
+            if(l>p && l>g){
+                document.getElementById("log").innerHTML = "El numero " + l + " es el mayor"
+            } else if(p>l && p>g){
+                document.getElementById("pass").innerHTML = "El numero " + p + " es el mayor"
+            } else if(g>l && g>p){
+                document.getElementById("gen").innerHTML = "El numero " + g + " es el mayor"
+            } else{
+                document.getElementById("log").innerHTML = "El numero " + l + " es el mayor"
+                document.getElementById("pass").innerHTML = "El numero " + p + " es el mayor"
+                document.getElementById("gen").innerHTML = "El numero " + g + " es el mayor"
+            }
+        }
+    </script>
+    <p id = "log"></p>
+    <p id = "pass"></p>
+    <p id = "gen"></p>
+    
+</body>
+</html>
