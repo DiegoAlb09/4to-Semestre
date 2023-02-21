@@ -18,6 +18,19 @@ h1{
     text-align: center;
     width: 100%;
     color: #0000ff77;
+    animation: animacion1 0.5s linear infinite alternate;;
+}
+
+@keyframes animacion1 {
+    0%{
+        transform: rotate(0deg) scale(1.10);
+    }
+    80%{
+        transform: rotate(0deg) scale(1.0);
+    }
+    100%{
+        transform: rotate(0deg) scale(0.8);
+    }
 }
 
 .inputNombre {
