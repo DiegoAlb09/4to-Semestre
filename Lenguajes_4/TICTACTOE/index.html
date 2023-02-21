@@ -61,6 +61,7 @@
                     }
                 }
             }
+            revisar();
         }
         function revisar(){
             if ((tab[0].value == "X" && tab[1].value == "X" && tab[2].value == "X")
@@ -70,8 +71,19 @@
             || (tab[1].value == "X" && tab[4].value == "X" && tab[7].value == "X")
             || (tab[2].value == "X" && tab[5].value == "X" && tab[8].value == "X")
             || (tab[0].value == "X" && tab[4].value == "X" && tab[8].value == "X")
-            || (tab[2].value == "X" && tab[4].value == "X" && tab[6].value)){
+            || (tab[2].value == "X" && tab[4].value == "X" && tab[6].value == "X")){
                 alert("Felicidades Jugador 1, has ganado");
+                bandera = false;
+            }
+            if ((tab[0].value == "O" && tab[1].value == "O" && tab[2].value == "O")
+            || (tab[3].value == "O" && tab[4].value == "O" && tab[5].value == "O")
+            || (tab[6].value == "O" && tab[7].value == "O" && tab[8].value == "O")
+            || (tab[0].value == "O" && tab[3].value == "O" && tab[6].value == "O")
+            || (tab[1].value == "O" && tab[4].value == "O" && tab[7].value == "O")
+            || (tab[2].value == "O" && tab[5].value == "O" && tab[8].value == "O")
+            || (tab[0].value == "O" && tab[4].value == "O" && tab[8].value == "O")
+            || (tab[2].value == "O" && tab[4].value == "O" && tab[6].value == "O")){
+                alert("Felicidades Jugador 2, has ganado");
                 bandera = false;
             }
         }
@@ -81,8 +93,8 @@
     <h1>Tic Tac Toe</h1>
     <section id = "principal">
         <article id = "comandos">
-            Jugador 1: <input type = "text" id = "jugador1"><br>
-            Jugador 2: <input type = "text" id = "jugador2"><br>
+            Jugador 1: <input type = "text" id = "jugador1" class="inputNombre"><br>
+            Jugador 2: <input type = "text" id = "jugador2"  class="inputNombre"><br>
             <input type = "button" id = "Iniciar" value = "Iniciar">
             <label id = "lblTurno"></label>
         </article>

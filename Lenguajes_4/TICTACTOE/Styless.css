@@ -19,6 +19,11 @@ h1{
     width: 100%;
     color: #0000ff77;
 }
+
+.inputNombre {
+    width: 80%;
+}
+
 article#comandos{
     border: 1px solid lightgray;	
     display: inline-block;
@@ -65,4 +70,15 @@ label{
 .botonJugador2{
     color: whitesmoke;
     background-color: #7d7;
+}
+
+@media screen and (max-width: 600px) {
+    article#comandos{
+        display: block;
+        width: 80%;
+    }
+    article#tablero{
+        display: block;
+        width: 100%;
+    }
 }
