@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen 1</title>
+    <link rel="stylesheet" href="Styless.css">
+</head>
+<body>
+    <h1> Examen 1</h1>
+    <h2> 1.- Total de Hombres y Mujeres</h2>
+    <p id = "demo">"Total de Hombres y Mujeres: "</p>
+    <h2>2.- Total de Joe y Moe</h2>
+    <p id = "dem02">"Total de Joe y Moe: "</p>
+    <h2>3.- Total de Hombres >= 30 años</h2>
+    <p id = "dem03">"Total de Hombres >= 30 años: "</p>
+    <h2>4.- Total de Mujeres <= 25 años</h2>
+    <p id = "dem04">"Total de Mujeres <= 25 años: "</p>
+    <h2>5.- Total de Kim >= 27 años</h2>
+    <p id = "dem05">"Total de Kim >= 27 años: "</p>
+    <script>
+        let xmlhttp = new XMLHttpRequest();
+        let url = "m28datos.json";
+
+        xmlhttp.onreadystatechange = function() 
+        {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+            {
+                let myArr = JSON.parse(xmlhttp.responseText);
+                HomyMuj(myArr);
+                JoeMoe(myArr);
+                May30(myArr);
+                Men25(myArr);
+                Kim25(myArr);
+            }
+        };
+        function HomyMuj(arr){
+            let HomT = 0;
+            let MujT = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i].sex == "H") {
+                    HomT++;
+                }else{
+                    MujT++;
+                }
+            }
+            document.getElementById("demo").innerHTML = "Total de Hombres y Mujeres: " + HomT + " Hombres y " + MujT + " Mujeres";
+        }
+        function JoeMoe(arr){
+            let JoeT = 0;
+            let MoeT = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i].nom == "Joe") {
+                    JoeT++;
+                }
+                if (arr[i].nom == "Moe") {
+                    MoeT++;
+                }
+            }
+            document.getElementById("dem02").innerHTML = "Total de Joe y Moe: " + JoeT + " Joe y " + MoeT + " Moe";
+        }
+        function May30(arr){
+            let May30T = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i].sex == "H" && arr[i].edad >= 30) {
+                    May30T++;
+                }
+            }
+            document.getElementById("dem03").innerHTML = "Total de Hombres >= 30 años: " + May30T;
+        }
+        function Men25(arr){
+            let Men25T = 0;
+            for (let i  = 0; i < arr.length; i++){
+                if (arr[i].sex == "M" && arr[i].edad <= 25){
+                    Men25T++;
+                }
+            }
+            document.getElementById("dem04").innerHTML = "Total de Mujeres <= 25 años: " + Men25T;
+        }
+        function Kim25(arr){
+            let Kim25T = 0;
+            for (let i = 0; i < arr.length; i++){
+                if (arr[i].nom == "Kim" && arr[i].edad >= 27){
+                    Kim25T++;
+                }
+            }
+            document.getElementById("dem05").innerHTML = "Total de Kim >= 27 años: " + Kim25T;
+        }
+        xmlhttp.open("GET", url, true);
+        xmlhttp.send();
+    </script>
+</body>
+</html>
