@@ -74,4 +74,6 @@ def IEEE754(n):
     print("IEEE754", convert)
     return convert
 
-IEEE754(-30)
+#Main
+n = float(input("Ingrese un numero decimal: "))
+IEEE754(n)
