@@ -108,3 +108,9 @@ img{
     width: 20em;
     height: 20em;
 }
+div{
+    margin-top: 1em;
+}
+.audio1{
+ cursor: pointer;   
+}
