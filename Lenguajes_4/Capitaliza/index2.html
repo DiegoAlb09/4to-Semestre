@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div> Ejercicio 31 </div>
+    <script>
+    function say2(){
+        let st = document.getElementById('add').value.toString()
+        let pri = ""
+        let dos = ""
+        let total = ""
+
+        uno = st.split(" ")
+
+        for (let i in uno){
+            pri = uno[i].toString()
+            pri2 = pri.charAt(0).toString()
+            let dos = pri2.toUpperCase() + pri.slice(1,st.length)
+
+            total = total.concat(dos+" ")
+        }
+        document.getElementById("add").value = total
+    }
+    </script>
+    <input type="text" id="add" onchange="say2()">
+    <input type = "text" id = "add2" />
+    <p id = "pp"></p>
+</body>
+</html>
