@@ -7,28 +7,36 @@
     <title>Document</title>
 </head>
 <body>
-    <div> Ejercicio 31 </div>
-    <script>
-    function say2(){
-        let st = document.getElementById('add').value.toString()
-        let pri = ""
-        let dos = ""
-        let total = ""
 
-        uno = st.split(" ")
-
-        for (let i in uno){
-            pri = uno[i].toString()
-            pri2 = pri.charAt(0).toString()
-            let dos = pri2.toUpperCase() + pri.slice(1,st.length)
-
-            total = total.concat(dos+" ")
-        }
-        document.getElementById("add").value = total
+    <form name="myform" method="post" action="validar2.html" onsubmit="return validateform()" >  
+    Name: <input type="text" name="name"><br/>  
+    Password: <input type="password" name="password"><br/>  
+    <input type="submit" value="register">  
+    </form>  
+            
+        <script>  
+    function validateform(){  
+    var name=document.myform.name.value;  
+    var password=document.myform.password.value;  
+      
+    if (name===null || name===""){  
+      alert("Name can't be blank");  
+      return false;  
+    }else if(password.length<6){  
+      alert("Password must be at least 6 characters long.");  
+      return false;  
+      }  
+    //capitalizo las primeras letras de cada palabra
+    var name = name.toLowerCase().split(' ');
+    for (var i = 0; i < name.length; i++) {
+        name[i] = name[i].charAt(0).toUpperCase() + name[i].slice(1); 
     }
+    name = name.join(' ');
+    document.myform.name.value = name;
+    alert(name)
+    }  
     </script>
-    <input type="text" id="add" onchange="say2()">
-    <input type = "text" id = "add2" />
-    <p id = "pp"></p>
+            
 </body>
+    
 </html>
