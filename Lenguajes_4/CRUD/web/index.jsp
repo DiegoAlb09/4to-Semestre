@@ -59,7 +59,7 @@ Student No.</b></font></td>
 <%
 String DRIVER = "org.mariadb.jdbc.Driver";
 //Class.forName("org.mariadb.jdbc.Driver");
-//Class.forName(DRIVER).newInstance();
+Class.forName(DRIVER).newInstance();
 Connection con=null;
 ResultSet rst=null;
 Statement stmt=null;
