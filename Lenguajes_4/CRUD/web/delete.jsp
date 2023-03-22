@@ -1,9 +1,3 @@
-<%-- 
-    Document   : delete
-    Created on : 15/03/2023, 08:25:24 AM
-    Author     : diego
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page language="java" import="java.sql.*,java.util.*,java.text.*" %>
 
@@ -40,7 +34,7 @@ out.println("<style>  a,b {font-family: arial;"
         try{
         Statement st = con.createStatement();
         String name=request.getParameter("name");
-        int in = st.executeUpdate("DELETE FROM 'student_info' WHERE id='"+id+"'");
+        int in = st.executeUpdate("DELETE FROM student_info WHERE id='"+id+"'");
         con.close();
         out.println("<p> The record is successfully deleted. </p>");
         out.println("<br>");
@@ -57,4 +51,3 @@ out.println("<style>  a,b {font-family: arial;"
        
     </body>
 </html>
-

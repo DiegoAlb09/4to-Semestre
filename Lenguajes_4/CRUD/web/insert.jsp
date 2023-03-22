@@ -1,9 +1,3 @@
-<%-- 
-    Document   : insert
-    Created on : 15/03/2023, 08:26:04 AM
-    Author     : diego
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page language="java" import="java.sql.*,java.util.*,java.text.*" %>
 <!DOCTYPE html>
@@ -41,6 +35,10 @@ out.println("<style>  a,b {font-family: arial;"
 
             <h2 align="center">ADD RECORD</h2>
        <table border="1" width="100%">
+           <tr>
+               <td width="50%"><b>ID:</b></td>
+            <td width="50%"><input type="text" name="id" size="50"/> </td>
+           </tr>
             <tr>
             <td width="50%"><b>Name:</b></td>
             <td width="50%"><input type="text" name="name" size="50"/> </td>
@@ -66,5 +64,3 @@ out.println("<style>  a,b {font-family: arial;"
       
     </body>
 </html>
-
-

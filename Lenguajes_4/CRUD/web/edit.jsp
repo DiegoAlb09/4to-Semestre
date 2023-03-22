@@ -1,9 +1,3 @@
-<%-- 
-    Document   : edit
-    Created on : 15/03/2023, 08:25:40 AM
-    Author     : diego
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page language="java" import="java.sql.*,java.util.*,java.text.*" %>
 
@@ -110,4 +104,3 @@ out.println("<a href='index.jsp'> RETURN TO MAIN PAGE </a>");
           
     </body>
 </html>
-

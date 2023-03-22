@@ -1,9 +1,3 @@
-<%-- 
-    Document   : update
-    Created on : 15/03/2023, 08:26:38 AM
-    Author     : diego
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page language="java" import="java.sql.*,java.util.*,java.text.*" %>
 
@@ -41,7 +35,7 @@ out.println("<style>  a,b {font-family: arial;"
             String name=request.getParameter("name");
             String city=request.getParameter("city");
             String phone=request.getParameter("phone");
-            int in = st.executeUpdate("UPDATE student_info SET name='"+name+"'"
+            int in = st.executeUpdate("UPDATE student_info SET id ='"+id+"', name='"+name+"'"
                                       + ",city='"+city+"',phone='"+phone+"' "
                                       + "WHERE id='"+id+"'");
             con.close();
@@ -59,5 +53,3 @@ out.println("<style>  a,b {font-family: arial;"
 %>
     </body>
 </html>
-
-
