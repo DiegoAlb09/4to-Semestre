@@ -5,7 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -60,13 +61,13 @@
         </b>
         <br>
         <c:set var ="testSrting" value = "Hello this is a JSTL function example"/>
-        <%--<c:out value = "${fn:indexOf(testString, 'JSTL')}"></c:out>--%>
-        <br/>
+        <c:out value = "${fn:indexOf(testString, 'JSTL')}"></c:out>
+        <br>
         <b> 8 Imprimir la longitud de un string </b>
         <br>
         <c:set var = "testString" value = "Hello this is a JSTL function example."/>
             Length of the given string:
-        <%--<c:out value = "${fn:length(testString)}"></c:out>--%>
+        <c:out value = "${fn:length(testString)}"></c:out>
         <br>
         <b> 9 Reemplazar un string por otro, dentro de un string </b>
         <br>
