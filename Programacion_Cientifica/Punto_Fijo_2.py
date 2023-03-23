@@ -1,3 +1,7 @@
+#Alumno: Diego Alberto Aranda Gonzalez
+#Fecha: 23/03/2023
+#Descripcion: Metodo de punto fijo
+
 import math
 
 #fx = input("Ingrese la funcion: ")
