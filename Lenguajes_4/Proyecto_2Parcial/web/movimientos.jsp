@@ -131,7 +131,7 @@ tr:hover {
          SELECT * FROM movimientos;
       </sql:query>
          <sql:update dataSource="${dbSource}" var="dbResult2">
-         UPDATE registros SET total = total + 1 WHERE id = ${param.id};
+         UPDATE registros SET total = total+1 WHERE id = ${param.id};
       </sql:update>
       <div id="myform">
          <form action="insertar2.jsp" method="post">
